@@ -14,10 +14,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Company.new
+    @post = Post.new
     @post["author"] = params["post"]["author"]
     @post["body"] = params["post"]["body"]
     @post["image"] = params["post"]["image"]
+    @post.save
     redirect_to"/posts"
   end
 
